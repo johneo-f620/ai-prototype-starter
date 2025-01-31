@@ -49,6 +49,8 @@ services:
     image: postgres:16-alpine
     networks: ['demo']
     restart: unless-stopped
+    ports:
+      - 5432:5432
     environment:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
@@ -128,7 +130,7 @@ services:
       - ollama-gpu
 
   caddy:
-    image: caddy:2
+    image: caddy:latest
     container_name: caddy
     depends_on:
       - n8n

@@ -1,4 +1,8 @@
-localhost {
+{
+  # debug
+}
+
+localhost n8n.localhost {
   reverse_proxy n8n:5678
   # Self-signed cert, tell the browser to trust it
   tls internal
