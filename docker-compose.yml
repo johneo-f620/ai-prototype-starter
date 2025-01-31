@@ -3,6 +3,7 @@ volumes:
   postgres_storage:
   ollama_storage:
   qdrant_storage:
+  caddy_data:
 
 networks:
   demo:
@@ -125,3 +126,17 @@ services:
     <<: *init-ollama
     depends_on:
       - ollama-gpu
+
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    depends_on:
+      - n8n
+    networks:
+      - demo
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
