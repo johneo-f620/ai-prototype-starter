@@ -1,5 +1,9 @@
 # Self-hosted AI starter kit
 
+## NOTE: Don't change the values in the `.env` to be different from the `.env.sample`
+
+Some of the credentials values are encrypted using the default values then cause issues that have to be resolve by creating new values. Adding new key/values should be ok though.
+
 **Self-hosted AI Starter Kit** is an open-source Docker Compose template designed to swiftly initialize a comprehensive local AI and low-code development environment.
 
 ![n8n.io - Screenshot](https://raw.githubusercontent.com/n8n-io/self-hosted-ai-starter-kit/main/assets/n8n-demo.gif)
